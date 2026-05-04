@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import CardSoin from '../components/CardSoin.astro';
+import Badge from '../components/Badge.astro';
 
 const soins = [
 	{
@@ -44,11 +45,9 @@ const soins = [
 		
 		<!-- Titre de la page -->
 		<div class="text-center mb-16">
-			<span class="inline-block px-4 py-1.5 mb-6 text-sm font-semibold tracking-wide text-button-1 uppercase bg-red-50 rounded-full font-sans">
-				Cabinet d'infirmiers libéral à domicile · Castanet-Tolosan
-			</span>
+			<Badge text="Cabinet d'infirmiers libéral à domicile · Castanet-Tolosan"/>
 			<h1 class="font-serif text-4xl md:text-5xl lg:text-6xl text-slate-900 leading-tight mb-6">Nos Soins 
-				<span class="italic text-button-1">Infirmiers</span> 
+				<span class="text-button-1">Infirmiers</span> 
 			</h1>
 			<p class="font-sans text-lg text-slate-600 mb-10 max-w-2xl mx-auto">
 			Nous intervenons à domicile et au cabinet sur prescription médicale.

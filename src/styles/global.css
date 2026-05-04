@@ -10,17 +10,18 @@
     --font-serif: "Playfair Display", serif;
 
     /* COLORS */
-    --color-header-1 : #fdf9f6; /*Beige*/
-    --color-button-1 : #854444; /*Rouge*/
-    --color-fond-1: #faf4ef;
-    --color-fond-rose:#f2d9d9;
+    --color-header-1 : #fdf9f6; /*Fond header*/
+    --color-button-1 : #88665D; /*boutons cliquable*/
+    --color-button-hover-1 : #9C7D72; /*hover bouton cliquable*/
+    
+    --color-fond-1: #faf4ef; /*Fond principal*/
 
-    --color-pastille-1: #f2d9d9;
+    --color-pastille-1: #f2d9d9; /*bg pastille haut de page*/
+    --color-text-pastille-1: #5e2b3a;
 
-    --color-footer-1: #3d2f2f;
+    --color-footer-1: #6D4C3D;
     --color-footer-text: #d8d5d5;
 
-    --color-cream: #fdf9f6; 
     --color-text: #2d2d2d;
     
 }
@@ -32,7 +33,7 @@
 
     body {
         font-family: var(--font-sans);
-        background-color: var(--color-cream);
+        background-color: var(--color-fond-1);
         color: var(--color-text);
         overflow-x: clip;
     }
