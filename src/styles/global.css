@@ -1,0 +1,57 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
+
+@theme {
+    /* FONT */
+    --font-sans: "Nunito", ui-sans-serif, system-ui, sans-serif;
+    --font-serif: "Playfair Display", serif;
+
+    /* COLORS */
+    --color-header-1 : #fdf9f6; /*Beige*/
+    --color-button-1 : #854444; /*Rouge*/
+    --color-fond-1: #faf4ef;
+    --color-fond-rose:#f2d9d9;
+
+    --color-pastille-1: #f2d9d9;
+
+    --color-footer-1: #3d2f2f;
+    --color-footer-text: #d8d5d5;
+
+    --color-cream: #fdf9f6; 
+    --color-text: #2d2d2d;
+    
+}
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: var(--font-sans);
+        background-color: var(--color-cream);
+        color: var(--color-text);
+        overflow-x: clip;
+    }
+    
+    h1, h2, h3, .font-display {
+    font-family: var(--font-serif);
+    }
+
+    /* Animation d'apparition fluide pour le dropdown du navbar */
+    .dropdown-content {
+        animation: fadeIn 0.2s ease-out;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

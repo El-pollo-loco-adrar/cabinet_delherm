@@ -1,0 +1,51 @@
+---
+interface Props {
+    title: string;
+    description: string;
+    details: string[];
+    badge?: string;
+}
+
+const {
+    title,
+    description,
+    details,
+    badge
+} = Astro.props;
+---
+
+<div class="card bg-white border border-slate-100 shadow-sm h-full">
+    <div class="card-body p-7">
+        <!-- Badge discret sans animation -->
+        <div class="flex justify-between items-start mb-4">
+            <h2 class="text-2xl font-sans text-slate-900 leading-tight">
+                {title}
+            </h2>
+            {badge && (
+                <span class="px-2 py-1 text-[10px] font-bold uppercase tracking-wider text-button-1 bg-red-50 rounded whitespace-nowrap ml-2">
+                    {badge}
+                </span>
+            )}
+        </div>
+
+        <!-- Description plus sobre -->
+        <p class="text-base text-slate-500 font-sans mb-4 leading-relaxed">
+            {description}
+        </p>
+
+        <div class="h-px bg-slate-100 w-full mb-6"></div>
+
+        <!-- Liste de soins sans effet 'hover' sur les items -->
+        <ul class="flex flex-col gap-4 flex-grow">
+            {details.map((detail) => (
+                <li class="flex items-start gap-3 text-sm text-slate-700">
+                    <!-- Checkmark médical sobre -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="size-4 mt-0.5 text-button-1/60 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span class="font-sans leading-snug">{detail}</span>
+                </li>
+            ))}
+        </ul>
+    </div>
+</div>
