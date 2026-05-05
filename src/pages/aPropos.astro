@@ -1,10 +1,90 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Badge from '../components/Badge.astro';
 ---
 
 <Layout 
-	title =""
-	description =""
+	title ="À propos d'Erika Ramade et Mathieu Bourrinet | Infirmiers Libéraux"
+	description ="Rencontrez votre équipe d'infirmiers libéraux à Castanet-Tolosan. Plus de 10 ans d'expérience au service des patients pour une prise en charge humaine et coordonnée."
 >
-	<h1>A propos</h1>
+	<section class="relative overflow-hidden bg-header-1 pt-16 pb-8 lg:pt-16 lg:pb-4">
+		<div class="container mx-auto px-4">
+
+			<div class="flex-1 text-center z-10">
+				<Badge text="Cabinet d'infirmiers libéral à domicile · Castanet-Tolosan"/>
+				<h1 class="font-serif text-4xl md:text-5xl lg:text-6xl text-slate-900 leading-tight mb-6">A propos <span class="text-button-1">de nous</span>
+				</h1>
+				<p class="font-sans text-lg text-slate-600 mb-0 max-w-2xl mx-auto italic">
+                    "Une équipe dévouée pour votre santé, au quotidien et à chaque étape de la vie."
+
+				</p>
+			</div>
+			
+		<!-- Section Contenu -->
+    <section class="max-w-7xl mx-auto py-12 px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+            
+            <!-- Bloc 1 : Présentation & Humain -->
+            <div class="bg-white p-8 md:p-10 rounded-[2rem] shadow-sm border border-slate-100 flex flex-col relative overflow-hidden group hover:shadow-md transition-all duration-300">
+                <!-- Décoration subtile en arrière-plan -->
+                <div class="absolute -top-10 -right-10 w-32 h-32 bg-emerald-50 rounded-full 
+							opacity-20 md:opacity-50 
+							-z-10 md:z-0
+							group-hover:scale-110 transition-transform">
+				</div>
+                
+                <div class="flex items-center gap-4 mb-6">
+                    <span class="text-3xl">🤝</span>
+                    <h2 class="text-2xl font-serif text-slate-800">Votre équipe de soins</h2>
+                </div>
+
+                <div class="space-y-4 text-slate-600 leading-relaxed font-sans">
+                    <p>
+                        Installés depuis plusieurs années à Castanet-Tolosan, <strong>Erika RAMADE</strong> et <strong>Mathieu BOURRINET</strong>, infirmiers diplômés d'État, vous proposent leurs services de soins infirmiers à domicile ou au cabinet.
+                    </p>
+                    <p>
+                        Les soins sont à destination de tous : <strong>enfants, adultes, et personnes âgées</strong>. Nous assurons tous types de soins sur prescription médicale, <span class="text-emerald-700 font-medium">7 jours sur 7 (dimanches et jours fériés inclus).</span>
+                    </p>
+                    <div class="bg-emerald-50/50 p-4 rounded-xl border-l-4 border-emerald-400 italic">
+                        "Plus que des soins, nous vous apportons un suivi personnalisé, des conseils adaptés et un programme de prévention. Nous mettons un point d'honneur à intervenir avec le sourire."
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bloc 2 : Administratif & Coordination -->
+            <div class="bg-white p-8 md:p-10 rounded-[2rem] shadow-sm border border-slate-200 flex flex-col relative overflow-hidden group hover:shadow-md transition-all duration-300">
+				<!-- Décoration arrière-plan -->
+				<div class="absolute -top-10 -right-10 w-32 h-32 bg-blue-100 rounded-full 
+							opacity-20 md:opacity-50 
+							-z-10 md:z-0
+							group-hover:scale-110 transition-transform">
+				</div>
+                <div class="flex items-center gap-4 mb-6">
+                    <span class="text-3xl">🏥</span>
+                    <h2 class="text-2xl font-serif text-slate-800">Prise en charge globale</h2>
+                </div>
+
+                <div class="space-y-4 text-slate-600 leading-relaxed font-sans">
+                    <p>
+                        Le cabinet est <strong>conventionné avec la Sécurité Sociale</strong>. Nous pratiquons le <strong>tiers-payant</strong> (caisses et mutuelles), afin que la question financière ne soit jamais un obstacle à vos soins.
+                    </p>
+                    <p>
+                        Au besoin, nous assurons la coordination des soins et travaillons en étroite collaboration avec l'ensemble des professionnels de santé du secteur : médecin traitant, SSIAD, HAD, laboratoire d'analyses médicales, kinésithérapeute, ainsi que les différents hôpitaux et cliniques du territoire
+                    </p>
+                    <p class="font-sans text-slate-600">
+                        Parce que votre santé mérite une prise en charge cohérente, nous faisons le lien entre tous les acteurs de votre parcours de soins.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Petite section de réassurance finale -->
+    <section class="max-w-4xl mx-auto py-12 px-4 text-center">
+        <div class="h-px w-24 bg-button-1 mx-auto mb-8"></div>
+        <p class="font-serif text-xl text-slate-700 italic">
+            "Notre priorité est de concilier technicité des soins et humanité au sein de votre foyer."
+        </p>
+    </section>
 </Layout>

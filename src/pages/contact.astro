@@ -4,19 +4,18 @@ import Badge from '../components/Badge.astro';
 ---
 
 <Layout 
-	title =""
-	description =""
+	title ="Contact et Plan | Cabinet Infirmier Delherm Castanet-Tolosan"
+	description ="Prenez rendez-vous avec Erika Ramade et Mathieu Bourrinet au 06 69 33 65 38. Cabinet situé au Centre Médical Louis Delherm à Castanet-Tolosan. Formulaire de contact et itinéraire."
 >
 	<section class="relative overflow-hidden bg-header-1 pt-16 pb-8 lg:pt-16 lg:pb-4">
 		<div class="container mx-auto px-4">
 
 			<div class="flex-1 text-center z-10">
 				<Badge text="Cabinet d'infirmiers libéral à domicile · Castanet-Tolosan"/>
-				<h1 class="font-serif text-4xl md:text-5xl lg:text-6xl text-slate-900 leading-tight mb-6">Contactez-<span class="text-button-1">nous</span>
+				<h1 class="font-serif text-4xl md:text-5xl lg:text-6xl text-slate-900 leading-tight mb-6">Contactez <span class="text-button-1">vos infirmiers</span>
 				</h1>
-				<p class="font-sans text-lg text-slate-600 mb-10 max-w-2xl mx-auto">Vous avez une question ? Un rendez-vous particulier ? N'hésitez pas à nous contacter !</p>
+				<p class="font-sans text-lg text-slate-600 mb-10 max-w-2xl mx-auto">Besoin de soins à domicile ou au cabinet ? Nous vous répondons très rapidement.</p>
 			</div>
-			
 		</div>
     </section>
 
@@ -25,33 +24,38 @@ import Badge from '../components/Badge.astro';
             
             <div class="flex flex-col gap-8">
                 <div class="bg-base-200 p-8 rounded-box shadow-sm border border-base-300 space-y-6">
-                    <h1 class="text-3xl font-serif text-button-1 italic">Nous trouver</h1>
+                    <h2 class="text-3xl font-serif text-button-1 italic">Nous trouver</h2>
                     
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-                        <div class="flex items-start gap-3">
-                            <div class="text-primary text-2xl">📍</div>
-                            <div>
-                                <p class="font-bold">Adresse</p>
-                                <p class="text-sm opacity-80 leading-relaxed">Centre médical Louis Delherm
-                                    17 avenue de la République,<br>31320 Castanet-Tolosan
-                                </p>
-                            </div>
+                        <div class="flex items-center gap-4"> 
+                            <div class="text-primary text-3xl bg-white p-3 rounded-full shadow-sm border border-base-300">📍</div> 
+                            <div> 
+                                <p class="font-bold text-slate-900">Adresse</p> 
+                                <p class="text-sm opacity-80 leading-relaxed">
+                                    Centre médical Louis Delherm<br>
+                                    17 avenue de la République,<br>
+                                    31320 Castanet-Tolosan 
+                                </p> 
+                            </div> 
                         </div>
 
-                        <div class="flex items-start gap-3">
-                            <div class="text-primary text-2xl">📞</div>
-                            <div>
-                                <p class="font-bold">Téléphone</p>
-                                <a href="tel:0562170015">
-                                    <p class="text-sm opacity-80 leading-relaxed">
-                                    06 69 33 65 38
-                                    </p>
-                                </a>
-                            </div>
+                        <div class="flex items-center gap-4"> 
+                            <div class="text-primary text-3xl bg-white p-3 rounded-full shadow-sm border border-base-300">📞</div> 
+                            <div> 
+                                <p class="font-bold text-slate-900">Téléphone (Urgence/RDV)</p> 
+                                <a href="tel:0669336538" class="hover:text-button-1 transition-colors"> 
+                                    <p class="text-sm opacity-80 leading-relaxed font-semibold"> 
+                                        06 69 33 65 38 
+                                    </p> 
+                                </a> 
+                            </div> 
                         </div>
+                    </div>
 
-                        
+                    <div class="pt-4 border-t border-base-300 text-sm text-slate-600">
+                        <p>🚗 <strong>Accès :</strong> Parking gratuit à proximité du centre médical.</p>
+                        <p>🚌 <strong>Bus :</strong> Ligne L6, arrêt "République".</p>
                     </div>
                 </div>
 
@@ -66,17 +70,16 @@ import Badge from '../components/Badge.astro';
                 <form
                     id="contact-form"
                     class="space-y-5"
-                    name="contact-elegance"
-                    action="https://formspree.io/f/xpqkoavk"
+                    name="contact-infirmiers"
+                    action="https://formspree.io/f/A-CHANGER"
                     method="POST"
                 >
                     <div class="form-control">
                         <label class="label"><span class="label-text font-bold">Objet de votre demande</span></label>
                         <select name="objet" class="select select-bordered focus:border-primary w-full bg-base-100" required>
                             <option disabled selected value="">Choisissez une option...</option>
-                            <option value="devis">Demande de devis</option>
-                            <option value="information">Demande d'information</option>
-                            <option value="lpg">Question LPG Endermologie</option>
+                            <option value="devis"> Demande de RDV prise de sang, pansements, injections, retrait de points,...</option>
+                            <option value="information">Demande de prise en charge pour accompagnement aux soins d'hygiènes</option>
                             <option value="autre">Autre...</option>
                         </select>
                     </div>
@@ -116,7 +119,7 @@ import Badge from '../components/Badge.astro';
 
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 
-<!-- <script>
+<script>
     import L from 'leaflet';
 
     delete (L.Icon.Default.prototype as any)._getIconUrl;
@@ -132,8 +135,8 @@ import Badge from '../components/Badge.astro';
     if (mapElement) {
         // 1. Coordonnées de l'institut (Latitude, Longitude)
         // Tu peux les trouver sur Google Maps en faisant clic droit sur un lieu
-        const lat = 43.598319431600345;
-        const lng = 1.4464186693383447;
+        const lat = 43.5160712945091;
+        const lng = 1.5027044587561622;
 
         // 2. Initialisation de la carte
         const map = L.map('map').setView([lat, lng], 15);
@@ -146,9 +149,10 @@ import Badge from '../components/Badge.astro';
 
         // 4. Ajout du marqueur personnalisé
         const marker = L.marker([lat, lng]).addTo(map);
-        marker.bindPopup("<b>Carmabelor</b><br>Institut de Beauté").openPopup();
+        marker.bindPopup("<b>Cabinet d'infirmiers</b><br>Centre médical Louis Delherm").openPopup();
     }
 
+    // FORMULAIRE
     const form = document.getElementById('contact-form') as HTMLFormElement;
     const toast = document.getElementById('toast');
     const btn = document.getElementById('submit-btn') as HTMLButtonElement;
@@ -190,4 +194,4 @@ import Badge from '../components/Badge.astro';
             }
         })
     }
-</script> -->
+</script>

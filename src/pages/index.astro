@@ -4,11 +4,12 @@ import Badge from '../components/Badge.astro';
 import { Image } from 'astro:assets';
 
 import index1 from '../assets/index1.jpg';
+import index3 from '../assets/index3.jpg'
 ---
 
 <Layout 
-	title =""
-	description =""
+	title ="Cabinet Infirmier Delherm - Soins à domicile à Castanet-Tolosan"
+	description ="Erika Ramade et Mathieu Bourrinet, infirmiers diplômés d'État à Castanet-Tolosan. Soins infirmiers à domicile et au cabinet 7j/7"
 >
 <section class="relative overflow-hidden  pt-16 pb-8 lg:pt-16 lg:pb-16">
 	<div class="container mx-auto px-4">
@@ -21,7 +22,7 @@ import index1 from '../assets/index1.jpg';
 					<span class="italic text-button-1">à domicile</span>
 				</h1>
 				<p class="font-sans text-lg text-slate-600 mb-4 max-w-2xl mx-auto">
-				Erika et Mathieu vous accompagnent au quotidien pour vos soins à domicile. nous intervenons sur Castanet-Tolosan et ses communes limitrophes.
+				Erika et Mathieu vous accompagnent au quotidien pour vos soins à domicile. Nous intervenons à Castanet-Tolosan et les communes limitrophes.
 				</p>
 				<p class="font-sans text-lg text-slate-600 mb-4 max-w-2xl mx-auto">Disponible 7 jours sur 7 (dimanches et jours fériés compris), tout au long de la journée.</p>
 				<p class="font-sans text-lg text-slate-600 mb-10 max-w-2xl mx-auto">Nous assurons tout type de soin sur prescription médicale</p>
@@ -30,20 +31,41 @@ import index1 from '../assets/index1.jpg';
 					<a href="/contact" class="btn btn-lg bg-button-1 hover:bg-button-hover-1 text-white rounded-full border-none px-8 transition-transform hover:scale-105 shadow-lg">
 						📅 Contactez-nous
 					</a>
-					<a href="tel:0600000000" class="btn btn-lg btn-ghost rounded-full border-slate-300 hover:bg-slate-100 text-slate-700">
+					<a href="tel:0669336538" class="btn btn-lg btn-ghost rounded-full border-slate-300 hover:bg-slate-100 text-slate-700">
 						📞 06 69 33 65 38
 					</a>
 				</div>
-				<div class="max-w-4xl mx-auto mt-8">
-                    <Image
-                        src={index1}
-                        alt="Illustration stéthoscope"
-                        width={1200} 
-                        height={675}
-                        class="rounded-3xl shadow-2xl w-full h-auto object-cover"
-                        loading="eager"
-                    />
-                </div>
+
+				<div class="max-w-6xl mx-auto mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 px-4">
+    <div class="relative group">
+        <Image
+            src={index1}
+            alt="Infirmier à domicile Castanet-Tolosan"
+            width={800} 
+            height={600}
+            class="rounded-3xl shadow-xl w-full h-[300px] md:h-[400px] object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+            loading="eager"
+        />
+        <!-- Petit badge décoratif optionnel sur l'image -->
+        <!-- <div class="absolute bottom-4 left-4 bg-white/90 backdrop-blur px-4 py-2 rounded-full shadow-sm text-sm font-medium text-slate-700">
+            Soins à domicile
+        </div> -->
+    </div>
+
+    <div class="relative group mt-8 md:mt-0">
+        <Image
+            src={index3}
+            alt="Cabinet médical Louis Delherm"
+            width={800} 
+            height={600}
+            class="rounded-3xl shadow-xl w-full h-[300px] md:h-[400px] object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+            loading="eager"
+        />
+        <!-- <div class="absolute bottom-4 left-4 bg-white/90 backdrop-blur px-4 py-2 rounded-full shadow-sm text-sm font-medium text-slate-700">
+            Le cabinet
+        </div> -->
+    </div>
+</div>
 			</div>
 
 		</div>

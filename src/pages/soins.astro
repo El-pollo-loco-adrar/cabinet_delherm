@@ -3,42 +3,46 @@ import Layout from '../layouts/Layout.astro';
 import CardSoin from '../components/CardSoin.astro';
 import Badge from '../components/Badge.astro';
 
+
 const soins = [
 	{
-		title: "Soins Courants",
-		description: "Injections et prélèvements quotidiens.",
-		details: ["Injections (SC, IM, IV)", "Prises de sang", "Vaccinations", "Tests PCR / Antigéniques"],
-		badge: "Sur RDV"
+		title: "Soins généraux",
+		description: "Pansements simples et complexes, injections (IM, SC, IV), prises de sang, surveillance glycémie et insuline, retrait de points ou d'agrafes.",
+        emoji:"💉",
+		badge:"Soins généraux",
+		badgeBg: "bg-emerald-100",
+		badgeText: "text-emerald-800"
 	},
 	{
-		title: "Pansements",
-		description: "Gestion de la cicatrisation.",
-		details: ["Pansements simples", "Pansements complexes", "Retrait de fils/agrafes", "Ulcères et escarres"],
-		badge: "Fréquent"
+		title: "Maintien à domicile",
+		description: "Soins d'hygiène (nursing), aide à l'habillage, pose de bas de contention, distribution et surveillance des traitements, accompagnement des personnes dépendantes.",
+		emoji:"🕊️",
+		badge: "Accompagnement",
+		badgeBg: "bg-purple-100",
+		badgeText: "text-purple-800"
 	},
 	{
-		title: "Diabétologie",
-		description: "Accompagnement et suivi.",
-		details: ["Surveillance glycémie", "Injection insuline", "Éducation thérapeutique", "Soins des pieds"],
-		badge: "Sur RDV"
+		title: "Soins complexes",
+		description: "Perfusions, chimiothérapie à domicile, traitement des plaies chroniques et escarres, soins de stomie et soins palliatifs (accompagnement de fin de vie).",
+        emoji:"💧",
+		badge: "Spécialisé",
+		badgeBg: "bg-rose-100",
+		badgeText: "text-rose-800"
 	},
 	{
-		title: "Perfusion",
-		description: "Administration de traitements.",
-		details: ["Pose de perfusion", "Changement de flacon", "Entretien de cathéter", "Nutrition parentérale"],
-		badge: "Trop cher"
-	},
-	{
-		title: "Accompagnement",
-		description: "Soins de confort et de vie.",
-		details: ["Aide à la toilette", "Gestion pilulier", "Soins palliatifs", "Soutien psychologique"]
+		title: "Consultation et suivie",
+		description: "Consultation infirmière, suivi vaccinal, éducation thérapeutique du patient diabétique ou cardiaque, et prévention des risques de chute.",
+		emoji:"📚",
+		badge: "Prévention",
+		badgeBg: "bg-amber-100",
+		badgeText: "text-amber-800"
 	}
 ];
 ---
 
 <Layout 
-	title ="Nos Soins - Cabinet DELHERM"
-	description =""
+	title ="Nos Soins Infirmiers | Cabinet Delherm Castanet-Tolosan"
+	description ="Soins généraux (pansements, injections), maintien à domicile, soins palliatifs et suivi diabétique à Castanet-Tolosan. Erika Ramade et Mathieu Bourrinet interviennent 7j/7."
 >
 	<section class="relative overflow-hidden bg-header-1 pt-8 pb-8 lg:pt-16 lg:pb-16">
 		<div class="container mx-auto px-4">
@@ -50,7 +54,7 @@ const soins = [
 				<span class="text-button-1">Infirmiers</span> 
 			</h1>
 			<p class="font-sans text-lg text-slate-600 mb-10 max-w-2xl mx-auto">
-			Nous intervenons à domicile et au cabinet sur prescription médicale.
+			Erika Ramade et Mathieu Bourrinet assurent une prise en charge complète sur prescription médicale, <strong>7 jours sur 7</strong>, pour les patients de tous âges.
 			</p>
 		</div>
 
@@ -63,13 +67,21 @@ const soins = [
 			))}
 		</div>
 
+		<!-- Section supplémentaire pour le SEO Local -->
+        <div class="mt-20 max-w-3xl mx-auto text-center border-t border-slate-200 pt-10">
+            <h2 class="text-2xl font-serif text-slate-800 mb-4">Zone d'intervention à Castanet-Tolosan</h2>
+            <p class="text-slate-600 leading-relaxed">
+                Votre cabinet d'infirmiers libéraux se déplace pour vos soins à domicile sur la commune de <strong>Castanet-Tolosan</strong> et les secteurs limitrophes. Nous travaillons en étroite collaboration avec les laboratoires et médecins du secteur pour garantir la continuité de vos soins.
+            </p>
+        </div>
+		
 		<!-- Petit rappel après les cartes -->
 		<div class="mt-16 text-center">
 			<p class="text-sm mb-8 text-slate-500 italic">
 			* Pour tout autre soin, n'hésitez pas à nous contacter directement par téléphone.
 			</p>
-			<a href="tel:0600000000" class="btn btn-lg btn-ghost rounded-full border-slate-300 hover:bg-slate-100 text-slate-700">
-				📞 06 00 00 00 00
+			<a href="tel:0669336538" class="btn btn-lg btn-ghost rounded-full border-slate-300 hover:bg-slate-100 text-slate-700">
+				📞 06 69 33 65 38
 			</a>
 		</div>
 
