@@ -120,36 +120,43 @@ import Badge from '../components/Badge.astro';
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 
 <script>
-    import L from 'leaflet';
+    //MAP AVEC LEAFLET
+    async function initMap() {
+        //importation de leaflet que quand on en a besoin
+        const L = (await import('leaflet')).default;
 
-    delete (L.Icon.Default.prototype as any)._getIconUrl;
-    L.Icon.Default.mergeOptions({
-        iconRetinaUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png',
-        iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',
-        shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
-    });
+        delete (L.Icon.Default.prototype as any)._getIconUrl;
+        L.Icon.Default.mergeOptions({
+            iconRetinaUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png',
+            iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',
+            shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
+        });
 
-    // On attend que le DOM soit chargé
-    const mapElement = document.getElementById('map');
-    
-    if (mapElement) {
-        // 1. Coordonnées de l'institut (Latitude, Longitude)
-        // Tu peux les trouver sur Google Maps en faisant clic droit sur un lieu
         const lat = 43.5160712945091;
         const lng = 1.5027044587561622;
 
-        // 2. Initialisation de la carte
         const map = L.map('map').setView([lat, lng], 15);
 
-        // 3. Chargement des "tuiles" (le design de la carte)
-        // On utilise OpenStreetMap qui est gratuit
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '© OpenStreetMap'
+            attribution: '© OpenStreetMap'
         }).addTo(map);
-
-        // 4. Ajout du marqueur personnalisé
         const marker = L.marker([lat, lng]).addTo(map);
         marker.bindPopup("<b>Cabinet d'infirmiers</b><br>Centre médical Louis Delherm").openPopup();
+    }
+
+    //On charge la map que si elle est visible
+    const mapElement = document.getElementById('map');
+    if (mapElement) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    initMap();
+                    observer.disconnect();
+                }
+            });
+        }, { rootMargin: "200px"}); // On commence à charger 200px avant qu'elle arrive à l'écran
+
+        observer.observe(mapElement);
     }
 
     // FORMULAIRE
