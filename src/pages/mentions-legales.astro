@@ -1,9 +1,109 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Badge from "../components/Badge.astro";
 ---
+
 <Layout
-    title ="Mentions Légales | Cabinet Infirmier Delherm"
-	description ="Informations légales concernant l'édition du site web du Cabinet Infirmier Delherm à Castanet-Tolosan."
+    title="Mentions Légales | Cabinet Infirmier Delherm"
+    description="Consultez les mentions légales du Cabinet Infirmier Delherm à Castanet-Tolosan. Informations sur l'éditeur, l'hébergement et la propriété intellectuelle."
 >
-    <h1>Mentions légales</h1>
+    <section class="bg-header-1/30 pt-16 pb-20">
+        <div class="container mx-auto px-4">
+            
+            <!-- Header de page -->
+            <div class="text-center mb-16">
+                <Badge text="Informations Légales" />
+                <h1 class="font-serif text-4xl md:text-6xl text-slate-900 mt-6">
+                    Mentions <span class="italic text-button-1">Légales</span>
+                </h1>
+                <p class="mt-4 text-slate-600">Conformément à la loi pour la confiance dans l'économie numérique (LCEN).</p>
+            </div>
+
+            <!-- Grille de cartes -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+                
+                <!-- Carte 1 : Éditeur (Version optimisée pour 2 infirmiers) -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100">
+                    <div class="w-12 h-12 bg-button-1/10 text-button-1 rounded-2xl flex items-center justify-center text-2xl mb-6">
+                        👤
+                    </div>
+                    <h2 class="text-xl font-serif text-slate-900 mb-4">Édition du site</h2>
+                    <div class="space-y-4 text-sm text-slate-600 leading-relaxed">
+                        
+                        <!-- Bloc Infirmier 1 -->
+                        <div class="border-b border-slate-50 pb-2">
+                            <p class="font-bold text-slate-800">Erika RAMADE</p>
+                            <p>SIRET : 123 456 789 00012</p>
+                            <p>RPPS : 1000XXXXXXX</p>
+                        </div>
+
+                        <!-- Bloc Infirmier 2 -->
+                        <div class="border-b border-slate-50 pb-2">
+                            <p class="font-bold text-slate-800">Mathieu BOURRINET</p>
+                            <p>SIRET : 987 654 321 00045</p>
+                            <p>RPPS : 1000YYYYYYY</p>
+                        </div>
+
+                        <p class="pt-2 italic">
+                            <strong>Adresse du cabinet :</strong><br />
+                            Centre médical Louis Delherm<br />
+                            17 avenue de la République<br />
+                            31320 Castanet-Tolosan
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Carte 2 : Hébergement -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-button-1/10 text-button-1 rounded-2xl flex items-center justify-center text-2xl mb-6">
+                        ☁️
+                    </div>
+                    <h2 class="text-xl font-serif text-slate-900 mb-4">Hébergement</h2>
+                    <div class="space-y-2 text-sm font-sans text-slate-600 leading-relaxed">
+                        <p><strong>Hébergeur :</strong> Vercel Inc.</p>
+                        <p><strong>Adresse :</strong> 440 N Barranca Ave #4133 Covina, CA 91723</p>
+                        <p><strong>Site web :</strong> www.vercel.com</p>
+                    </div>
+                </div>
+
+                <!-- Carte 3 : Conception -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-button-1/10 text-button-1 rounded-2xl flex items-center justify-center text-2xl mb-6">
+                        💻
+                    </div>
+                    <h2 class="text-xl font-serif text-slate-900 mb-4">Conception & Design</h2>
+                    <div class="space-y-2 text-sm font-sans text-slate-600 leading-relaxed">
+                        <p><strong>Réalisation :</strong> wilbou.dev</p>
+                        <p><strong>Contact :</strong><a href="mailto:oufrid31@outlook.fr" class="hover:underline"> oufrid31@outlook.fr</a> </p>
+                        <p><strong>Crédit Photos :</strong> Unsplash / Adobe Stock</p>
+                    </div>
+                </div>
+
+                <!-- Carte 4 : Propriété Intellectuelle -->
+                <div class="lg:col-span-2 bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                    <div class="flex flex-col md:flex-row gap-6 items-start">
+                        <div class="w-12 h-12 shrink-0 bg-button-1/10 text-button-1 rounded-2xl flex items-center justify-center text-2xl">
+                            ⚖️
+                        </div>
+                        <div>
+                            <h2 class="text-xl font-serif text-slate-900 mb-4">Propriété Intellectuelle</h2>
+                            <p class="text-sm font-sans text-slate-600 leading-relaxed">
+                                L'ensemble de ce site (structure, textes, logo, photos) relève de la législation française et internationale sur le droit d'auteur et la propriété intellectuelle. Toute reproduction, représentation, modification ou adaptation de tout ou partie des éléments du site est strictement interdite sans autorisation écrite préalable.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carte 5 : Ordre des Infirmiers -->
+                <div class="bg-footer-1 text-white p-8 rounded-3xl shadow-lg flex flex-col justify-center text-center">
+                    <h2 class="text-xl font-serif mb-4 italic">Déontologie</h2>
+                    <p class="text-xs font-sans opacity-90 leading-relaxed">
+                        La profession d'infirmier est réglementée par le Code de Santé Publique et le Code de Déontologie des infirmiers.</p>
+                        <p class="text-xs font-sans opacity-90 leading-relaxed">Les infirmiers nommés sont inscrits à l'Ordre National des Infirmiers (ONI).
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
 </Layout>

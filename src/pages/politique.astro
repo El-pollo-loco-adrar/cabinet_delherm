@@ -1,9 +1,84 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Badge from "../components/Badge.astro";
 ---
 <Layout
     title ="Politique de Confidentialité | Cabinet Infirmier Delherm"
-	description ="Informations sur la protection de vos données personnelles et le respect du secret médical par le Cabinet Infirmier Delherm."
+    description ="Informations sur la protection de vos données personnelles et le respect du secret médical par le Cabinet Infirmier Delherm."
 >
-    <h1>Politiques de confidentialité</h1>
+    <section class="bg-header-1/30 pt-16 pb-20">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <div class="text-center mb-16">
+                <Badge text="Sécurité & Transparence" />
+                <h1 class="font-serif text-4xl md:text-6xl text-slate-900 mt-6">
+                    Politique de <span class="italic text-button-1">Confidentialité</span>
+                </h1>
+                <p class="mt-6 text-slate-600 max-w-2xl mx-auto">
+                    Le respect de votre vie privée et le secret médical sont au cœur de notre pratique infirmière.
+                </p>
+            </div>
+
+            <div class="bg-white rounded-3xl shadow-sm border border-slate-100 p-8 md:p-12 space-y-12 text-slate-700 leading-relaxed">
+                
+                <!-- Section 1 -->
+                <section>
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="bg-button-1/10 text-button-1 p-2 rounded-lg text-xl">🛡️</span>
+                        <h2 class="text-2xl font-serif text-slate-900">1. Introduction</h2>
+                    </div>
+                    <p>
+                        Le cabinet <strong>Delherm</strong> (ci-après "nous") accorde une importance capitale à la protection de vos données. En tant qu'infirmiers libéraux, nous sommes soumis au <strong>secret professionnel</strong>. Cette page détaille comment nous traitons les informations collectées sur ce site.
+                    </p>
+                </section>
+
+                <!-- Section 2 : Important pour le médical -->
+                <section class="bg-slate-50 p-6 rounded-2xl border-l-4 border-button-1">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-xl">🩺</span>
+                        <h2 class="text-xl font-bold text-slate-900">Données de Santé</h2>
+                    </div>
+                    <p class="text-sm">
+                        <strong>Attention :</strong> Le formulaire de contact est destiné à une prise de contact initiale. Pour votre sécurité, ne transmettez pas d'informations médicales sensibles (diagnostics, photos de soins) par ce biais. Ces échanges devront se faire de vive voix ou via des canaux sécurisés lors du soin.
+                    </p>
+                </section>
+
+                <!-- Section 3 -->
+                <section>
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="bg-button-1/10 text-button-1 p-2 rounded-lg text-xl">📝</span>
+                        <h2 class="text-2xl font-serif text-slate-900">2. Collecte et finalité</h2>
+                    </div>
+                    <p>Nous collectons uniquement les données nécessaires à la gestion de vos soins :</p>
+                    <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                        <li class="bg-slate-50 p-3 rounded-xl border border-slate-100"><strong>Nom & Prénom :</strong> Pour vous identifier.</li>
+                        <li class="bg-slate-50 p-3 rounded-xl border border-slate-100"><strong>E-mail / Téléphone :</strong> Pour vous recontacter.</li>
+                    </ul>
+                </section>
+
+                <!-- Section 4 -->
+                <section>
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="bg-button-1/10 text-button-1 p-2 rounded-lg text-xl">⚖️</span>
+                        <h2 class="text-2xl font-serif text-slate-900">3. Vos Droits</h2>
+                    </div>
+                    <p>Conformément au RGPD, vous disposez d'un droit d'accès, de rectification et d'effacement de vos données. Pour toute demande, contactez les responsables du traitement : <strong>Mme Erika Ramade et M. Mathieu Bourrinet</strong>.</p>
+                </section>
+
+                <!-- Section Contact : Stylisée -->
+                <section class="pt-8 border-t border-slate-100">
+                    <div class="bg-footer-1 text-white p-8 rounded-2xl text-center">
+                        <h2 class="text-2xl font-serif mb-4 italic">Une question ?</h2>
+                        <p class="mb-6 opacity-90">Pour toute demande relative à vos données personnelles, nous sommes à votre écoute :</p>
+                        <div class="flex flex-col md:flex-row gap-4 justify-center">
+                            <a href="mailto:infirmiers.castanet@gmail.com" class="bg-white/10 hover:bg-white/20 px-4 py-2 rounded-full transition-colors">
+                                📧 infirmiers.castanet@gmail.com
+                            </a>
+                            <span class="hidden md:block">|</span>
+                            <span class="opacity-90">📍 Cabinet Delherm, Castanet-Tolosan</span>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
 </Layout>
