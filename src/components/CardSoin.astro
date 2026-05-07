@@ -1,54 +1,54 @@
----
-interface Props {
-    title: string;
-    description: string;
-    emoji: string;
-    badge?: string;
-    // badgeColor?: string;
-    // colorName?: string;
-    badgeBg?: string;
-    badgeText?: string;
-}
+--- 
+interface Props { 
+    title: string; 
+    description: string[]; // Changé en tableau de chaînes pour la liste
+    emoji: string; 
+    badge?: string; 
+    badgeBg?: string; 
+    badgeText?: string; 
+} 
 
-const {
-    title,
-    description,
-    emoji,
-    badge,
-    // badgeColor = "bg-button-1"
-    //colorName = "red"
-    badgeBg = "bg-red-100",
-    badgeText = "text-red-800"
-} = Astro.props;
+const { 
+    title, 
+    description, // Maintenant c'est une liste
+    emoji, 
+    badge, 
+    badgeBg = "bg-red-100", 
+    badgeText = "text-red-800" 
+} = Astro.props; 
+--- 
 
----
+<div class="card bg-white border border-slate-100 shadow-sm h-full hover:shadow-md transition-all duration-300 rounded-3xl"> 
+    <div class="card-body p-8 flex flex-col items-center"> 
 
-<div class="card bg-white border border-slate-100 shadow-sm h-full hover:shadow-md transition-all duration-300 rounded-3xl">
-    <div class="card-body p-8 flex flex-col items-center text-justify">
-        
-        <!-- 1. Le Badge -->
-        {badge && (
-            <span class={`px-3 py-1 text-[10px] font-black uppercase tracking-widest ${badgeBg} ${badgeText} rounded-lg mb-6`}>
-                {badge}
-            </span>
-        )}
+        <!-- 1. Le Badge --> 
+        {badge && ( 
+            <span class={`px-3 py-1 text-[10px] font-black uppercase tracking-widest ${badgeBg} ${badgeText} rounded-lg mb-6`}> 
+                {badge} 
+            </span> 
+        )} 
 
-        <!-- 2. L'Emoji -->
-        <div class="text-4xl mb-4 grayscale-[0.2] hover:grayscale-0 transition-all">
-            {emoji}
-        </div>
+        <!-- 2. L'Emoji --> 
+        <div class="text-5xl mb-6 grayscale-[0.2] hover:grayscale-0 transition-all transform hover:scale-110"> 
+            {emoji} 
+        </div> 
 
-        <!-- 3. Le Titre (dans sa pastille) -->
-        <h3 class="mb-4">
-            <span class="inline-block px-4 py-1.5 rounded-full text-xs font-bold tracking-wide uppercase bg-pastille-1 text-text-pastille-1 font-sans">
-                {title}
-            </span>
-        </h3>
+        <!-- 3. Le Titre --> 
+        <h3 class="mb-6 text-center"> 
+            <span class="inline-block px-5 py-2 rounded-full bg-pastille-1 text-text-pastille-1 font-serif text-sm font-bold shadow-sm"> 
+                {title} 
+            </span> 
+        </h3> 
 
-        <!-- 4. La Description -->
-        <p class="text-base text-text-1 font-sans leading-relaxed">
-            {description}
-        </p>
-        
-    </div>
+        <!-- 4. La Description en Liste --> 
+        <ul class="w-full space-y-3 text-left"> 
+            {description.map((item) => (
+                <li class="flex items-start gap-3 text-sm text-slate-600 font-sans leading-snug">
+                    <!-- Petite puce personnalisée -->
+                    <span class={`mt-1.5 w-1.5 h-1.5 rounded-full shrink-0 ${badgeBg.replace('100', '400')}`}></span>
+                    {item}
+                </li>
+            ))}
+        </ul>
+    </div> 
 </div>

@@ -5,51 +5,51 @@ import Badge from '../components/Badge.astro';
 
 
 const soins = [
-	{
-		title: "Soins généraux",
-		description: "Pansements simples et complexes, injections (IM, SC, IV), prises de sang, surveillance glycémie et insuline, retrait de points ou d'agrafes.",
+    {
+        title: "Soins généraux",
+        description: ["Pansements simples et complexes", "Injections (IM, SC, IV)", "Prises de sang", "Surveillance glycémie et insuline", "Retrait de points ou d'agrafes"],
         emoji:"💉",
-		badge:"Soins généraux",
-		badgeBg: "bg-emerald-100",
-		badgeText: "text-emerald-800"
-	},
-	{
-		title: "Maintien à domicile",
-		description: "Soins d'hygiène (nursing), aide à l'habillage, pose de bas de contention, distribution et surveillance des traitements, accompagnement des personnes dépendantes.",
-		emoji:"🕊️",
-		badge: "Accompagnement",
-		badgeBg: "bg-purple-100",
-		badgeText: "text-purple-800"
-	},
-	{
-		title: "Soins complexes",
-		description: "Perfusions, chimiothérapie à domicile, traitement des plaies chroniques et escarres, soins de stomie et soins palliatifs (accompagnement de fin de vie).",
+        badge:"Soins généraux",
+        badgeBg: "bg-emerald-100",
+        badgeText: "text-emerald-800"
+    },
+    {
+        title: "Maintien à domicile",
+        description: ["Soins d'hygiène (nursing)", "Aide à l'habillage", "Pose de bas de contention", "Distribution et suivi des traitements", "Accompagnement dépendance"],
+        emoji:"🕊️",
+        badge: "Accompagnement",
+        badgeBg: "bg-purple-100",
+        badgeText: "text-purple-800"
+    },
+    {
+        title: "Soins complexes",
+        description: ["Perfusions", "Chimiothérapie à domicile", "Traitement des plaies chroniques", "Soins de stomie", "Accompagnement palliatif"],
         emoji:"💧",
-		badge: "Spécialisé",
-		badgeBg: "bg-rose-100",
-		badgeText: "text-rose-800"
-	},
-	{
-		title: "Consultation et suivie",
-		description: "Consultation infirmière, suivi vaccinal, éducation thérapeutique du patient diabétique ou cardiaque, et prévention des risques de chute.",
-		emoji:"📚",
-		badge: "Prévention",
-		badgeBg: "bg-amber-100",
-		badgeText: "text-amber-800"
-	}
+        badge: "Spécialisé",
+        badgeBg: "bg-rose-100",
+        badgeText: "text-rose-800"
+    },
+    {
+        title: "Consultation et suivi",
+        description: ["Consultation infirmière", "Suivi vaccinal", "Éducation thérapeutique", "Prévention des risques de chute"],
+        emoji:"📚",
+        badge: "Prévention",
+        badgeBg: "bg-amber-100",
+        badgeText: "text-amber-800"
+    }
 ];
 ---
 
 <Layout 
 	title ="Nos Soins Infirmiers | Cabinet Delherm Castanet-Tolosan"
-	description ="Soins généraux (pansements, injections), maintien à domicile, soins palliatifs et suivi diabétique à Castanet-Tolosan. Erika Ramade et Mathieu Bourrinet interviennent 7j/7."
+	description ="Soins généraux (pansements, injections), retrait agrafes et points, toilettes, maintien à domicile, soins palliatifs et suivi diabétique à Castanet-Tolosan. Erika Ramade et Mathieu Bourrinet interviennent 7j/7."
 >
 	<section class="relative overflow-hidden bg-header-1 pt-8 pb-8 lg:pt-16 lg:pb-16">
 		<div class="container mx-auto px-4">
 		
 		<!-- Titre de la page -->
 		<div class="text-center mb-16">
-			<Badge text="Cabinet d'infirmiers libéral à domicile · Castanet-Tolosan"/>
+			<Badge text="Cabinet d'infirmiers à domicile · Castanet-Tolosan"/>
 			<h1 class="font-serif text-4xl md:text-5xl lg:text-6xl text-slate-900 leading-tight mb-6">Nos Soins 
 				<span class="text-button-1">Infirmiers</span> 
 			</h1>
@@ -59,19 +59,40 @@ const soins = [
 		</div>
 
 		<!-- C'EST ICI QUE TU METS LA GRILLE -->
-		<div class="flex flex-wrap justify-center gap-8 max-w-6xl mx-auto">
-			{soins.map((soin) => (
-			<div class="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] max-w-sm"> <!-- On limite la largeur max pour éviter que les cartes soient trop larges sur tablette -->
-				<CardSoin {...soin} />
-			</div>
-			))}
-		</div>
+		<div class="flex flex-wrap justify-center gap-8 max-w-7xl mx-auto">
+    {soins.map((soin) => (
+        <div class="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] max-w-md bg-white p-8 rounded-3xl shadow-sm border border-slate-100 flex flex-col hover:shadow-md transition-shadow">
+            
+            <!-- Header de la Card -->
+            <div class="flex items-start justify-between mb-6">
+                <span class={`text-4xl p-3 rounded-2xl ${soin.badgeBg}`}>
+                    {soin.emoji}
+                </span>
+                <span class={`px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest ${soin.badgeBg} ${soin.badgeText}`}>
+                    {soin.badge}
+                </span>
+            </div>
+
+            <h2 class="text-2xl font-serif text-slate-900 mb-4">{soin.title}</h2>
+
+            <!-- La Liste à puces -->
+            <ul class="space-y-3 flex-1">
+                {soin.description.map((item) => (
+                    <li class="flex items-start gap-3 text-slate-600 text-sm leading-tight">
+                        <span class={`mt-1.5 w-1.5 h-1.5 rounded-full shrink-0 ${soin.badgeBg.replace('100', '400')}`}></span>
+                        {item}
+                    </li>
+                ))}
+            </ul>
+        </div>
+    ))}
+</div>
 
 		<!-- Section supplémentaire pour le SEO Local -->
         <div class="mt-20 max-w-3xl mx-auto text-center border-t border-slate-200 pt-10">
             <h2 class="text-2xl font-serif text-slate-800 mb-4">Zone d'intervention à Castanet-Tolosan</h2>
             <p class="text-slate-600 leading-relaxed">
-                Votre cabinet d'infirmiers libéraux se déplace pour vos soins à domicile sur la commune de <strong>Castanet-Tolosan</strong> et les secteurs limitrophes. Nous travaillons en étroite collaboration avec les laboratoires et médecins du secteur pour garantir la continuité de vos soins.
+                Votre cabinet d'infirmiers se déplace pour vos soins à domicile sur la commune de <strong>Castanet-Tolosan</strong> et les secteurs limitrophes. Nous travaillons en étroite collaboration avec les laboratoires et médecins du secteur pour garantir la continuité de vos soins.
             </p>
         </div>
 		
