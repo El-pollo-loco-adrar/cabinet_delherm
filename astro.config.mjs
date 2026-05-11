@@ -10,7 +10,7 @@ export default defineConfig({
         plugins: [tailwindcss()],
     },
 
-    site:'https://www.infirmiers-castanet.fr',
+    site:'https://www.infirmiers-castanet.fr'
 
     integrations: [sitemap()]
 });
