@@ -34,5 +34,5 @@ jobs:
                 # ON TESTE LE CHEMIN ABSOLU COMPLET
                 server-dir: ./
                 # server-dir: domains/infirmiers-castanet.fr/public_html/
-                dangerous-clean-slate: true
+                dangerous-clean-slate: false
                 state-name: restart-from-zero.json
