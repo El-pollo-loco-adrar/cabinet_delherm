@@ -29,9 +29,9 @@ jobs:
                 server: ${{ secrets.FTP_SERVER }}
                 username: ${{ secrets.FTP_USERNAME }}
                 password: ${{ secrets.FTP_PASSWORD }}
-                protocol: ftps
-                port: 21
+                protocol: ftp
                 local-dir: ./dist/
-                # Chez Hostinger, le dossier racine est public_html
-                server-dir: ./
+                # ON TESTE LE CHEMIN ABSOLU COMPLET
+                server-dir: domains/infirmiers-castanet.fr/public_html/
                 dangerous-clean-slate: true
+                state-name: restart-from-zero.json
