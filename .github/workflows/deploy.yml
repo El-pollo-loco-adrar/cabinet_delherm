@@ -32,7 +32,7 @@ jobs:
                 protocol: ftp
                 local-dir: ./dist/
                 # ON TESTE LE CHEMIN ABSOLU COMPLET
-                server-dir: domains/infirmiers-castanet.fr/public_html/
+                server-dir: ./domains/infirmiers-castanet.fr/public_html/
                 # server-dir: domains/infirmiers-castanet.fr/public_html/
                 dangerous-clean-slate: false
                 state-name: restart-from-zero.json
