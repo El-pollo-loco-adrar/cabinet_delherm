@@ -31,5 +31,5 @@ jobs:
                 password: ${{ secrets.FTP_PASSWORD }}
                 local-dir: ./dist/
                 # Chez Hostinger, le dossier racine est public_html
-                server-dir: ./domains/infirmiers-castanet.fr/public_html/
+                server-dir: ./public_html/
                 dangerous-clean-slate: true
